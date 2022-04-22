@@ -1,11 +1,22 @@
-# Author: Jake in the Math Lab
+# Author:   Jake in the Math Lab
+# Date:     4/22/2022
 
 class Monster:
-    def __init__(self, name, health, power, moveset):
+    def __init__(self, name, health, power):
         self.name = name        # Name of the monster
         self.health = health    # Health Points (HP) 
         self.power = power      # (Attack) power, kinda like level
-        self.moveset = []  # Moveset. Pass in as a list
+        self.moveset = []       # Moveset. Use addMove() to add more moves.
+    
+    def __str__(self):
+        # This will allow a class to have a string representation 
+        # when there is a print call to the instance.
+        return f'{self.name} (HP {self.health}, Power {self.power})'
+    
+    def __repr__(self):
+        # This will allow a class to have a string representation when the 
+        # instance is within a data collection.
+        return f'{self.name} (HP {self.health}, Power {self.power}, has {len(self.moveset)} moves)'
     
     # Get definitions
     def getName(self):
